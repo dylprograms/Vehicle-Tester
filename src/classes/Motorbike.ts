@@ -55,10 +55,10 @@ wheelie() {
     console.log(`Wheels: ${this.wheels.length}`);
 
     console.log(
-      'wheel 1: ${this.wheels[0].diameter} inch with a ${this.wheels[0].getTireBrand} inches'
+      'front wheel: ${this.wheels[0].diameter} inch with a ${this.wheels[0].getTireBrand} inches' 
     )
     console.log(
-      'wheel 2: ${this.wheels[1].diameter} inch with a ${this.wheels[1].getTireBrand} inches'
+      'rear wheel: ${this.wheels[1].diameter} inch with a ${this.wheels[1].getTireBrand} inches'
     )
   }
  
