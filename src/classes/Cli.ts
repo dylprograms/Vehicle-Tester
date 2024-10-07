@@ -277,25 +277,7 @@ class Cli {
 
   // method to find a vehicle to tow
   // TODO: add a parameter to accept a truck object
-  findVehicleToTow(): void {
-    inquirer
-      .prompt([
-        {
-          type: 'list',
-          name: 'vehicleToTow',
-          message: 'Select a vehicle to tow',
-          choices: this.vehicles.map((vehicle) => {
-            return {
-              name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
-              value: vehicle,
-            };           
-          }
-          ),
-        },
-      ])
-    }
-
-          // find the selected truck and tow the selected vehicle
+            // find the selected truck and tow the selected vehicle
          
                   // Ensure that the selected vehicle is a Truck before calling tow
  
@@ -304,6 +286,41 @@ class Cli {
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
 
   // method to perform actions on a vehicle
+  findVehicleToTow(): void {
+    inquirer
+      .prompt([
+        {
+          type: 'list',
+          name: 'selectedVehicleVin',
+          message: 'Select a vehicle to tow',
+          choices: this.vehicles.map((vehicle) => {
+            return {
+              name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
+              value: vehicle.vin,
+            };
+          }),
+        },
+      ])
+      .then((answers) => {
+        for (let i = 0; i < this.vehicles.length; i++) {
+          if (this.vehicles[i].vin === answers.selectedVehicleVin) {
+            if (this.vehicles[i] instanceof Truck) {
+              console.log('Trucks cannot tow themselves');
+              this.performActions();
+            } else {
+              for (let j = 0; j < this.vehicles.length; j++) {
+                if (this.vehicles[j].vin === this.selectedVehicleVin) {
+                  this.vehicles[j].tow(this.vehicles[i]);
+                  this.performActions();
+                }
+              }
+            }
+          }
+        }
+      });
+  }
+
+
   performActions(): void {
     inquirer
       .prompt([
