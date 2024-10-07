@@ -20,16 +20,14 @@ class Truck extends Vehicle implements AbleToTow {
   year: number;
   weight: number;
   topSpeed: number;
-  towingCapacity: number;
   wheels: Wheel[];
+  towingCapacity: number;
   tow(vehicle: Truck | Motorbike | Car): void {
-    if (vehicle instanceof Truck) {
-      console.log(`Trucks cannot tow other trucks`);
-    } else if (vehicle.weight > this.towingCapacity) {
-      console.log(`The ${vehicle.make} ${vehicle.model} is too heavy to be towed`);
+    if (vehicle.weight <= this.towingCapacity) {
+      console.log(`Vehicle is being towed`);
     } else {
-      console.log(`The ${vehicle.make} ${vehicle.model} is being towed`);
-    }
+      console.log(`Vehicle is too heavy to be towed`);
+  }
   }
 
 
@@ -41,8 +39,9 @@ class Truck extends Vehicle implements AbleToTow {
     year: number,
     weight: number,
     topSpeed: number,
-    towingCapacity: number,
     wheels: Wheel[],
+    towingCapacity: number,
+    
     
   ) {
     super();
