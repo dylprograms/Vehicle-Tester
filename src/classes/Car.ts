@@ -49,6 +49,9 @@ class Car extends Vehicle {
   wheelie(): void {
     console.log(`Oops! Cars can't do wheelies!`);
   }
+  tow(vehicle: Car | Vehicle | Wheel): void {
+    console.log(`${vehicle} is being towed`);
+  }
 
   // Override the printDetails method from the Vehicle class
   override printDetails(): void {
