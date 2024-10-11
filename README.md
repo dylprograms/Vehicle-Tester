@@ -22,7 +22,7 @@ Install npm and node.js
 ## Usage
 
 use npm build and then npm start to activate the program
-[Sample-Video]()
+[Sample-Video](https://drive.google.com/file/d/1UFKQvC7FC1d-01HBeuyQfvwe8YZdqZsH/view)
 
 ## Contribution
 
@@ -39,4 +39,4 @@ This project is licensed under the [MIT](https://opensource.org/licenses/MIT) li
 
 ## Questions
 
-If you would like to contact me, please use my email or github username: [dylyoungprograms](), dlyoungworking@gmail.com
+If you would like to contact me, please use my email or github username: [dylyoungprograms](https://github.com/dylprograms/Vehicle-Tester), dlyoungworking@gmail.com
