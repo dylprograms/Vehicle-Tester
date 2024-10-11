@@ -17,18 +17,20 @@ Creates a way for inputing information via CLI prompts to create a readme
 
 ## Installation
 
+Install npm and node.js
 
 ## Usage
 
-
+use npm build and then npm start to activate the program
+[Sample-Video]()
 
 ## Contribution
 
-
+Any contributions for ease of use are welcome
 
 ## Tests
 
-
+run through the all functions after npm start
 
 ## License
 
